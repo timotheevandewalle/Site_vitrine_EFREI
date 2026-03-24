@@ -1,0 +1,242 @@
+/* ============================================
+   MODE NUIT - Version moderne inspirée efrei.fr
+   ============================================ */
+
+.dark-mode {
+    --bleu-efrei: #1E4A76;        /* Bleu un peu plus clair pour le mode nuit */
+    --bleu-efrei-light: #0F2A3E;   /* Fond sombre pour les sections */
+    --bleu-accent: #3B82F6;        /* Bleu plus vif et visible sur fond sombre */
+    --gris-texte: #9CA3AF;         /* Gris clair pour le texte secondaire */
+    --gris-bordure: #2D3A48;       /* Bordures plus discrètes */
+    --blanc: #1F2A3A;              /* Fond des cartes et conteneurs */
+    --ombre-legere: 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    --ombre-moyenne: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+/* Fond général */
+.dark-mode body {
+    background-color: #0F172A;      /* Fond très sombre mais pas totalement noir */
+    color: #E2E8F0;                 /* Texte principal clair */
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3 {
+    color: #F1F5F9;                /* Titres blanc cassé */
+}
+
+/* Header mode nuit */
+.dark-mode header {
+    background: #0F172A;
+    border-bottom-color: var(--gris-bordure);
+}
+
+.dark-mode .site-title {
+    color: white;
+}
+
+.dark-mode .nav-menu a {
+    color: #CBD5E1;
+}
+
+.dark-mode .nav-menu a:hover,
+.dark-mode .nav-menu a.active {
+    color: white;
+}
+
+.dark-mode .dark-mode-btn {
+    background: #1E293B;
+    border-color: var(--gris-bordure);
+    color: #FCD34D;                /* Icône lune jaune */
+}
+
+.dark-mode .dark-mode-btn:hover {
+    background: #334155;
+    border-color: var(--bleu-accent);
+}
+
+/* Hero section */
+.dark-mode .hero {
+    background: linear-gradient(135deg, #0F2A3E 0%, #0A1A2A 100%);
+}
+
+.dark-mode .hero-title {
+    color: white;
+}
+
+/* Sections avec fond alterné */
+.dark-mode .carousel-section {
+    background: #0F172A;           /* Fond cohérent avec le reste */
+}
+
+.dark-mode .stats-section {
+    background: #0F172A;
+}
+
+.dark-mode section {
+    border-bottom-color: var(--gris-bordure);
+}
+
+/* Cartes et conteneurs */
+.dark-mode .card,
+.dark-mode .teacher-card,
+.dark-mode .team-member,
+.dark-mode .agenda-content {
+    background: var(--blanc);
+    border-color: var(--gris-bordure);
+    box-shadow: var(--ombre-legere);
+}
+
+.dark-mode .card:hover,
+.dark-mode .teacher-card:hover {
+    box-shadow: var(--ombre-moyenne);
+    border-color: var(--bleu-accent);
+}
+
+/* Tableaux */
+.dark-mode .comparison-table {
+    background: var(--blanc);
+}
+
+.dark-mode .comparison-table th {
+    background: #0F172A;
+    color: #F1F5F9;
+}
+
+.dark-mode .comparison-table td {
+    border-bottom-color: var(--gris-bordure);
+    color: #CBD5E1;
+}
+
+/* Formulaires */
+.dark-mode .form-group input,
+.dark-mode .form-group textarea {
+    background: #0F172A;
+    border-color: var(--gris-bordure);
+    color: #F1F5F9;
+}
+
+.dark-mode .form-group input:focus,
+.dark-mode .form-group textarea:focus {
+    border-color: var(--bleu-accent);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.dark-mode .form-group label {
+    color: #CBD5E1;
+}
+
+/* Boutons secondaires */
+.dark-mode .btn-secondary {
+    border-color: var(--bleu-accent);
+    color: var(--bleu-accent);
+}
+
+.dark-mode .btn-secondary:hover {
+    background: var(--bleu-accent);
+    color: white;
+}
+
+/* Onglets agenda */
+.dark-mode .tab-btn {
+    background: transparent;
+    border-color: var(--gris-bordure);
+    color: #CBD5E1;
+}
+
+.dark-mode .tab-btn.active {
+    background: var(--bleu-accent);
+    color: white;
+    border-color: var(--bleu-accent);
+}
+
+/* Filtres */
+.dark-mode .filter-tag {
+    background: var(--blanc);
+    border-color: var(--gris-bordure);
+    color: #CBD5E1;
+}
+
+.dark-mode .filter-tag.active {
+    background: var(--bleu-accent);
+    color: white;
+}
+
+.dark-mode .search-bar input {
+    background: #0F172A;
+    border-color: var(--gris-bordure);
+    color: #F1F5F9;
+}
+
+.dark-mode .search-bar button {
+    background: var(--bleu-accent);
+}
+
+/* Footer */
+.dark-mode footer {
+    background: #0A0F1A;
+}
+
+.dark-mode .footer-nav a {
+    color: #94A3B8;
+}
+
+.dark-mode .footer-nav a:hover {
+    color: white;
+}
+
+.dark-mode .footer-copyright {
+    border-top-color: #1E293B;
+}
+
+/* Placeholder map */
+.dark-mode .map-placeholder {
+    background: #1E293B;
+    color: #94A3B8;
+}
+
+/* Badge spécialité enseignant */
+.dark-mode .teacher-specialite {
+    color: var(--bleu-accent);
+}
+
+.dark-mode .teacher-email {
+    color: #94A3B8;
+}
+
+/* Carrousel */
+.dark-mode .carousel-container {
+    background: var(--blanc);
+}
+
+.dark-mode .carousel-btn {
+    background: rgba(30, 41, 59, 0.9);
+    color: white;
+}
+
+.dark-mode .carousel-btn:hover {
+    background: #334155;
+}
+
+.dark-mode .dot {
+    background: #475569;
+}
+
+.dark-mode .dot.active {
+    background: var(--bleu-accent);
+}
+
+/* Chiffres clés */
+.dark-mode .stat-number {
+    color: var(--bleu-accent);
+}
+
+/* Lien de carte */
+.dark-mode .card-link {
+    color: var(--bleu-accent);
+}
+
+/* Message d'erreur formulaire */
+.dark-mode .error-message {
+    color: #F87171;
+}
