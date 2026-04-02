@@ -1,5 +1,5 @@
 /* ============================================
-   RESET & BASE (reset moderne)
+   RESET & BASE
    ============================================ */
 *,
 *::before,
@@ -17,18 +17,18 @@ html {
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.5;
-    color: #1A2C3E; /* Bleu-gris foncé pour le texte */
+    color: #1A2C3E;
     background-color: #FFFFFF;
     overflow-x: hidden;
 }
 
 /* ============================================
-   TYPOGRAPHIE & COULEURS (inspiré efrei.fr)
+   VARIABLES
    ============================================ */
 :root {
-    --bleu-efrei: #003A6B;      /* Bleu institutionnel profond */
-    --bleu-efrei-light: #EFF5FF; /* Bleu très clair pour les sections */
-    --bleu-accent: #0066CC;      /* Bleu plus vif pour les liens/boutons */
+    --bleu-efrei: #003A6B;
+    --bleu-efrei-light: #EFF5FF;
+    --bleu-accent: #0066CC;
     --gris-texte: #4A5B6E;
     --gris-bordure: #E2E8F0;
     --blanc: #FFFFFF;
@@ -36,41 +36,28 @@ body {
     --ombre-moyenne: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
 }
 
+/* ============================================
+   TYPOGRAPHIE
+   ============================================ */
 h1, h2, h3 {
     font-weight: 600;
     line-height: 1.2;
     letter-spacing: -0.02em;
     color: #0A2540;
 }
-
-h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-}
+h1 { font-size: 3rem; margin-bottom: 1rem; }
+h2 { font-size: 2rem; margin-bottom: 2rem; text-align: center; }
+h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
 
 a {
     text-decoration: none;
     color: var(--bleu-accent);
     transition: color 0.2s ease;
 }
-
-a:hover {
-    color: var(--bleu-efrei);
-}
+a:hover { color: var(--bleu-efrei); }
 
 /* ============================================
-   LAYOUT & UTILITAIRES
+   LAYOUT
    ============================================ */
 .container {
     max-width: 1280px;
@@ -82,10 +69,9 @@ section {
     padding: 4rem 0;
     border-bottom: 1px solid var(--gris-bordure);
 }
+section:last-child { border-bottom: none; }
 
-section:last-child {
-    border-bottom: none;
-}
+
 
 /* ============================================
    HEADER & NAVIGATION
@@ -98,7 +84,6 @@ header {
     z-index: 100;
     border-bottom: 1px solid var(--gris-bordure);
 }
-
 .header-container {
     display: flex;
     align-items: center;
@@ -107,37 +92,25 @@ header {
     flex-wrap: wrap;
     padding: 0.75rem 2rem;
 }
-
-.logo img {
-    height: 40px;
-    width: auto;
-}
-
-.logo-dark {
-    display: none;
-}
-
+.logo img { height: 40px; width: auto; }
+.logo-dark { display: none; }
 .site-title {
     font-weight: 600;
     font-size: 1.25rem;
     color: var(--bleu-efrei);
     margin-right: auto;
 }
-
-/* Navigation */
 .nav-menu {
     display: flex;
     gap: 2rem;
     list-style: none;
 }
-
 .nav-menu a {
     font-weight: 500;
     color: #1A2C3E;
     position: relative;
     padding: 0.5rem 0;
 }
-
 .nav-menu a::after {
     content: '';
     position: absolute;
@@ -148,12 +121,8 @@ header {
     background: var(--bleu-accent);
     transition: width 0.2s ease;
 }
-
 .nav-menu a:hover::after,
-.nav-menu a.active::after {
-    width: 100%;
-}
-
+.nav-menu a.active::after { width: 100%; }
 .dark-mode-btn {
     background: none;
     border: 1px solid var(--gris-bordure);
@@ -168,50 +137,46 @@ header {
     justify-content: center;
     background: var(--blanc);
 }
-
 .dark-mode-btn:hover {
     background: var(--bleu-efrei-light);
     border-color: var(--bleu-accent);
 }
 
 /* ============================================
-   HERO SECTION (bannière)
+   HERO
    ============================================ */
 .hero {
     background: linear-gradient(135deg, var(--bleu-efrei) 0%, #002B4F 100%);
     color: white;
     text-align: center;
     padding: 5rem 0;
-    margin-bottom: 0;
     border-bottom: none;
 }
-
 .hero-title {
     font-size: 3.5rem;
     font-weight: 700;
     color: white;
     margin-bottom: 1rem;
 }
-
 .hero-title span {
     display: inline-block;
     border-right: 3px solid white;
     padding-right: 0.2rem;
     animation: blink 0.75s step-end infinite;
 }
-
 @keyframes blink {
     from, to { border-color: transparent; }
     50% { border-color: white; }
 }
-
 .hero-subtitle {
     font-size: 1.25rem;
     opacity: 0.9;
     margin-bottom: 2rem;
 }
 
-/* Boutons */
+/* ============================================
+   BOUTONS
+   ============================================ */
 .btn {
     display: inline-block;
     padding: 0.8rem 2rem;
@@ -222,37 +187,40 @@ header {
     border: none;
     font-size: 1rem;
 }
-
 .btn-primary {
     background: var(--bleu-accent);
     color: white;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
 .btn-primary:hover {
     background: #0052A3;
     transform: translateY(-2px);
     color: white;
 }
-
 .btn-secondary {
     background: transparent;
     border: 1px solid var(--bleu-accent);
     color: var(--bleu-accent);
 }
-
 .btn-secondary:hover {
     background: var(--bleu-accent);
     color: white;
 }
+.btn-danger {
+    background: #dc2626;
+    color: white;
+    border: none;
+}
+.btn-danger:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+}
+.btn-small { padding: 0.5rem 1rem; font-size: 0.85rem; }
 
 /* ============================================
-   CARROUSEL (modernisé)
+   CARROUSEL
    ============================================ */
-.carousel-section {
-    background: var(--bleu-efrei-light);
-}
-
+.carousel-section { background: var(--bleu-efrei-light); }
 .carousel-container {
     position: relative;
     overflow: hidden;
@@ -260,18 +228,12 @@ header {
     background: var(--blanc);
     box-shadow: var(--ombre-moyenne);
 }
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.4s ease-in-out;
-}
-
+.carousel-track { display: flex; transition: transform 0.4s ease-in-out; }
 .carousel-slide {
     min-width: 100%;
     padding: 2rem;
     text-align: center;
 }
-
 .carousel-slide img {
     width: 100%;
     max-height: 400px;
@@ -279,7 +241,6 @@ header {
     border-radius: 0.75rem;
     margin-bottom: 1rem;
 }
-
 .carousel-btn {
     position: absolute;
     top: 50%;
@@ -294,27 +255,18 @@ header {
     box-shadow: var(--ombre-legere);
     transition: all 0.2s;
 }
-
 .carousel-btn:hover {
     background: white;
     transform: translateY(-50%) scale(1.05);
 }
-
-.carousel-btn.prev {
-    left: 1rem;
-}
-
-.carousel-btn.next {
-    right: 1rem;
-}
-
+.carousel-btn.prev { left: 1rem; }
+.carousel-btn.next { right: 1rem; }
 .carousel-dots {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
     margin: 1rem 0 0.5rem;
 }
-
 .dot {
     width: 8px;
     height: 8px;
@@ -323,7 +275,6 @@ header {
     cursor: pointer;
     transition: all 0.2s;
 }
-
 .dot.active {
     background: var(--bleu-accent);
     width: 24px;
@@ -331,7 +282,7 @@ header {
 }
 
 /* ============================================
-   CARTES & GRILLES
+   CARTES & GRILLES (Accueil, Équipe)
    ============================================ */
 .cards-grid,
 .teachers-grid {
@@ -340,7 +291,6 @@ header {
     gap: 2rem;
     margin-top: 1rem;
 }
-
 .card {
     background: var(--blanc);
     border-radius: 1rem;
@@ -350,42 +300,32 @@ header {
     transition: all 0.2s ease;
     border: 1px solid var(--gris-bordure);
 }
-
 .card:hover {
     transform: translateY(-4px);
     box-shadow: var(--ombre-moyenne);
     border-color: var(--bleu-accent);
 }
-
-.card-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
+.card-icon { font-size: 2.5rem; margin-bottom: 1rem; }
 .card-link {
     display: inline-block;
     margin-top: 1rem;
     font-weight: 500;
 }
 
-/* Stats */
+/* ============================================
+   STATISTIQUES
+   ============================================ */
 .stats-section {
     background: var(--bleu-efrei-light);
     text-align: center;
 }
-
 .stats-grid {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 2rem;
 }
-
-.stat-item {
-    flex: 1;
-    min-width: 150px;
-}
-
+.stat-item { flex: 1; min-width: 150px; }
 .stat-number {
     font-size: 3rem;
     font-weight: 700;
@@ -393,7 +333,7 @@ header {
 }
 
 /* ============================================
-   AGENDA (onglets)
+   AGENDA (PERMANENCES FIXES)
    ============================================ */
 .agenda-tabs {
     display: flex;
@@ -402,7 +342,6 @@ header {
     gap: 0.5rem;
     margin-bottom: 2rem;
 }
-
 .tab-btn {
     padding: 0.5rem 1.2rem;
     border-radius: 9999px;
@@ -412,35 +351,26 @@ header {
     font-weight: 500;
     transition: all 0.2s;
 }
-
 .tab-btn.active {
     background: var(--bleu-accent);
     color: white;
     border-color: var(--bleu-accent);
 }
-
 .agenda-content {
     background: var(--blanc);
     border-radius: 1rem;
     padding: 1.5rem;
     border: 1px solid var(--gris-bordure);
 }
-
-.agenda-content ul {
-    list-style: none;
-}
-
+.agenda-content ul { list-style: none; }
 .agenda-content li {
     padding: 0.75rem 0;
     border-bottom: 1px solid var(--gris-bordure);
 }
-
-.agenda-content li:last-child {
-    border-bottom: none;
-}
+.agenda-content li:last-child { border-bottom: none; }
 
 /* ============================================
-   TABLEAUX (formations)
+   TABLEAU COMPARATIF (Formations)
    ============================================ */
 .comparison-table {
     width: 100%;
@@ -450,139 +380,138 @@ header {
     overflow: hidden;
     box-shadow: var(--ombre-legere);
 }
-
 .comparison-table th,
 .comparison-table td {
     padding: 1rem;
     text-align: left;
     border-bottom: 1px solid var(--gris-bordure);
 }
-
 .comparison-table th {
     background: var(--bleu-efrei-light);
     font-weight: 600;
+    color: var(--bleu-efrei);
 }
 
 /* ============================================
-   FORMULAIRE
+   FILTRES (Formations & Équipe)
    ============================================ */
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid var(--gris-bordure);
-    border-radius: 0.75rem;
-    font-family: inherit;
-    transition: border 0.2s;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--bleu-accent);
-    box-shadow: 0 0 0 3px rgba(0,102,204,0.1);
-}
-
-.checkbox {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.checkbox input {
-    width: auto;
-}
-
-.error-message {
-    color: #E53E3E;
-    font-size: 0.875rem;
-    margin-top: 0.25rem;
-    display: block;
-}
-
-/* ============================================
-   FOOTER
-   ============================================ */
-footer {
-    background: #0A2540;
-    color: #94A3B8;
-    padding: 3rem 0 1.5rem;
-    font-size: 0.875rem;
-}
-
-.footer-container {
-    text-align: center;
-}
-
-.footer-nav {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin-bottom: 1.5rem;
-}
-
-.footer-nav a {
-    color: #CBD5E1;
-}
-
-.footer-nav a:hover {
-    color: white;
-}
-
-.footer-info {
-    margin: 1rem 0;
-}
-
-.footer-social {
+.filter-buttons,
+.filter-tags {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin: 1.5rem 0;
+    flex-wrap: wrap;
+    margin: 2rem 0;
 }
-
-.footer-social img {
-    width: 24px;
-    height: 24px;
-    filter: brightness(0) invert(1);
-    opacity: 0.7;
-    transition: opacity 0.2s;
+.filter-btn,
+.filter-tag {
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    background: var(--blanc);
+    border: 1px solid var(--gris-bordure);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
-
-.footer-social img:hover {
-    opacity: 1;
+.filter-btn.active,
+.filter-tag.active {
+    background: var(--bleu-accent);
+    color: white;
+    border-color: var(--bleu-accent);
 }
-
-.footer-copyright {
-    border-top: 1px solid #1E3A5F;
-    padding-top: 1.5rem;
-    margin-top: 1rem;
+.filter-btn:hover,
+.filter-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--ombre-legere);
 }
 
 /* ============================================
-   FILTRES (page équipe)
+   CARTES FORMATIONS (détail)
+   ============================================ */
+.course-card {
+    background: var(--blanc);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--gris-bordure);
+    transition: all 0.3s ease;
+}
+.course-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--ombre-moyenne);
+    border-color: var(--bleu-accent);
+}
+.course-card h3 {
+    color: var(--bleu-efrei);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.course-card p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+    color: var(--gris-texte);
+}
+.course-card .btn-secondary { margin-top: 1rem; }
+
+/* ============================================
+   PARTENAIRES (côte à côte)
+   ============================================ */
+.partners-section {
+    background: var(--bleu-efrei-light);
+    text-align: center;
+    padding: 4rem 0;
+}
+.partners-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+.partner-card {
+    flex: 0 0 auto;
+    width: 120px;
+    padding: 1rem;
+    background: var(--blanc);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    filter: grayscale(20%);
+    opacity: 0.8;
+}
+.partner-card img {
+    width: 100%;
+    height: auto;
+    max-height: 60px;
+    object-fit: contain;
+}
+.partner-card:hover {
+    transform: translateY(-5px);
+    filter: grayscale(0%);
+    opacity: 1;
+    box-shadow: var(--ombre-moyenne);
+}
+@media (max-width: 768px) {
+    .partners-grid { gap: 1.5rem; }
+    .partner-card { width: 100px; }
+}
+@media (max-width: 480px) {
+    .partners-grid { gap: 1rem; }
+    .partner-card { width: 80px; }
+}
+
+/* ============================================
+   PAGE ÉQUIPE (enseignants)
    ============================================ */
 .search-section {
     background: white;
     border-bottom: 1px solid var(--gris-bordure);
 }
-
 .search-bar {
     display: flex;
     max-width: 500px;
     margin: 0 auto 1.5rem;
 }
-
 .search-bar input {
     flex: 1;
     padding: 0.75rem;
@@ -590,7 +519,6 @@ footer {
     border-radius: 9999px 0 0 9999px;
     font-size: 1rem;
 }
-
 .search-bar button {
     background: var(--bleu-accent);
     border: none;
@@ -600,32 +528,6 @@ footer {
     font-size: 1rem;
     color: white;
 }
-
-.filter-tags {
-    display: flex;
-    justify-content: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-}
-
-.filter-tag {
-    padding: 0.4rem 1.2rem;
-    border-radius: 9999px;
-    background: var(--blanc);
-    border: 1px solid var(--gris-bordure);
-    cursor: pointer;
-    transition: all 0.2s;
-    font-size: 0.875rem;
-}
-
-.filter-tag.active {
-    background: var(--bleu-accent);
-    color: white;
-    border-color: var(--bleu-accent);
-}
-
-/* Teacher cards */
 .teacher-card {
     background: var(--blanc);
     border-radius: 1rem;
@@ -634,12 +536,10 @@ footer {
     border: 1px solid var(--gris-bordure);
     transition: all 0.2s;
 }
-
 .teacher-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--ombre-moyenne);
 }
-
 .teacher-img img {
     width: 120px;
     height: 120px;
@@ -648,13 +548,11 @@ footer {
     margin-bottom: 1rem;
     border: 3px solid var(--bleu-efrei-light);
 }
-
 .teacher-specialite {
     font-weight: 500;
     color: var(--bleu-accent);
     margin: 0.25rem 0;
 }
-
 .teacher-email {
     font-size: 0.875rem;
     color: var(--gris-texte);
@@ -662,7 +560,7 @@ footer {
 }
 
 /* ============================================
-   PAGE CONTACT (équipe projet)
+   PAGE CONTACT
    ============================================ */
 .team-grid {
     display: grid;
@@ -670,7 +568,6 @@ footer {
     gap: 2rem;
     margin: 2rem 0;
 }
-
 .team-member {
     text-align: center;
     padding: 1.5rem;
@@ -678,7 +575,6 @@ footer {
     border-radius: 1rem;
     border: 1px solid var(--gris-bordure);
 }
-
 .team-member img {
     width: 120px;
     height: 120px;
@@ -686,14 +582,12 @@ footer {
     object-fit: cover;
     margin-bottom: 1rem;
 }
-
 .info-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     margin-top: 2rem;
 }
-
 .map-placeholder {
     background: var(--gris-bordure);
     border-radius: 1rem;
@@ -705,15 +599,361 @@ footer {
 }
 
 /* ============================================
+   FORMULAIRES
+   ============================================ */
+.form-group { margin-bottom: 1.5rem; }
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--gris-bordure);
+    border-radius: 0.75rem;
+    font-family: inherit;
+    transition: border 0.2s;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--bleu-accent);
+    box-shadow: 0 0 0 3px rgba(0,102,204,0.1);
+}
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.checkbox input { width: auto; }
+.error-message {
+    color: #E53E3E;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+/* ============================================
+   PAGE MATIÈRES
+   ============================================ */
+.section-subtitle {
+    text-align: center;
+    color: var(--gris-texte);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+.matieres-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+.matiere-card {
+    background: var(--blanc);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid var(--gris-bordure);
+    transition: all 0.3s ease;
+}
+.matiere-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--ombre-moyenne);
+    border-color: var(--bleu-accent);
+}
+.matiere-icon { font-size: 3rem; margin-bottom: 1rem; }
+.matiere-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--bleu-efrei);
+}
+.matiere-description {
+    color: var(--gris-texte);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+.matiere-stats {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    font-size: 0.85rem;
+}
+.matiere-stats .stat {
+    background: var(--bleu-efrei-light);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    color: var(--bleu-efrei);
+}
+.matieres-populaires {
+    background: var(--bleu-efrei-light);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+.matieres-populaires h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+.popular-list { max-width: 500px; margin: 0 auto; }
+.popular-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.popular-name { width: 120px; font-weight: 500; }
+.popular-bar {
+    flex: 1;
+    height: 8px;
+    background: var(--gris-bordure);
+    border-radius: 4px;
+    overflow: hidden;
+}
+.popular-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--bleu-accent), var(--bleu-efrei));
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+.popular-count {
+    width: 100px;
+    font-size: 0.85rem;
+    color: var(--gris-texte);
+}
+
+/* ============================================
+   PAGE PERMANENCES (créneaux spéciaux)
+   ============================================ */
+/* Page header - sans bande blanche */
+.page-header {
+    background: linear-gradient(135deg, var(--bleu-efrei) 0%, #002B4F 100%);
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+    margin: 0;
+    border: none;
+}
+
+.page-header h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin: 0;
+}
+.alert {
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    margin: 1rem 0 2rem;
+}
+.alert-info {
+    background: var(--bleu-efrei-light);
+    color: var(--bleu-efrei);
+    border-left: 4px solid var(--bleu-accent);
+}
+.creneaux-dynamiques {
+    background: var(--bleu-efrei-light);
+    padding: 3rem 0;
+}
+.creneaux-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.creneau-card {
+    background: var(--blanc);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 1px solid var(--gris-bordure);
+    transition: all 0.3s ease;
+}
+.creneau-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--ombre-moyenne);
+}
+.creneau-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--gris-bordure);
+}
+.creneau-header .matiere {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--bleu-efrei);
+}
+.type {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    background: var(--bleu-efrei-light);
+}
+.type.individu {
+    background: #FEF3C7;
+    color: #D97706;
+}
+.type.collective {
+    background: #DCFCE7;
+    color: #16A34A;
+}
+.creneau-info p { margin: 0.5rem 0; font-size: 0.9rem; }
+.reservation-card {
+    background: var(--blanc);
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--gris-bordure);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.reservation-info { flex: 2; }
+.reservation-details { flex: 2; font-size: 0.9rem; }
+.statut-badge {
+    background: #10b981;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
+}
+@media (max-width: 768px) {
+    .reservation-card { flex-direction: column; align-items: flex-start; }
+}
+
+/* ============================================
+   DASHBOARD
+   ============================================ */
+.dashboard-section {
+    padding: 3rem 0;
+    min-height: 70vh;
+}
+.welcome-message {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+.dashboard-card {
+    background: var(--blanc);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid var(--gris-bordure);
+    transition: all 0.3s ease;
+    box-shadow: var(--ombre-legere);
+}
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--ombre-moyenne);
+}
+.dashboard-card .card-icon { font-size: 3rem; margin-bottom: 1rem; }
+.dashboard-card h3 {
+    margin-bottom: 1rem;
+    color: var(--bleu-efrei);
+}
+.dashboard-card p {
+    color: var(--gris-texte);
+    margin-bottom: 1.5rem;
+}
+.mes-reservations-dashboard {
+    background: var(--bleu-efrei-light);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+.mes-reservations-dashboard h2 { text-align: left; margin-bottom: 1.5rem; }
+.reservations-list-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.reservation-card-dashboard {
+    background: var(--blanc);
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-left: 4px solid var(--bleu-accent);
+}
+.reservation-card-dashboard .reservation-info strong {
+    color: var(--bleu-efrei);
+    font-size: 1.1rem;
+}
+.reservation-card-dashboard .reservation-details {
+    flex: 2;
+    font-size: 0.9rem;
+    color: var(--gris-texte);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+    background: #0A2540;
+    color: #94A3B8;
+    padding: 3rem 0 1.5rem;
+    font-size: 0.875rem;
+}
+.footer-container { text-align: center; }
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+.footer-nav a { color: #CBD5E1; }
+.footer-nav a:hover { color: white; }
+.footer-info { margin: 1rem 0; }
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+.footer-social img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+.footer-social img:hover { opacity: 1; }
+.footer-copyright {
+    border-top: 1px solid #1E3A5F;
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-    h2 {
-        font-size: 1.5rem;
-    }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
     .header-container {
         flex-direction: column;
         align-items: stretch;
@@ -724,158 +964,111 @@ footer {
         flex-wrap: wrap;
         gap: 1rem;
     }
-    .hero-title {
-        font-size: 2rem;
-    }
-    .stats-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-    .info-grid {
-        grid-template-columns: 1fr;
-    }
+    .hero-title { font-size: 2rem; }
+    .stats-grid { flex-direction: column; align-items: center; }
+    .info-grid { grid-template-columns: 1fr; }
+    .reservation-card { flex-direction: column; align-items: flex-start; }
 }
-
 /* ============================================
-   PAGE MATIÈRES
+   AMÉLIORATION DU FOND - TOUCHE DE BLEU CLAIR
    ============================================ */
-.matieres-section {
-    padding: 4rem 0;
+
+/* Fond général très légèrement bleuté */
+body {
+    background-color: #F8FAFE;  /* Blanc cassé avec une pointe de bleu */
 }
 
-.section-subtitle {
-    text-align: center;
+/* Sections avec fond alterné déjà existantes (bleu-efrei-light) */
+.hero,
+.page-header {
+    background: linear-gradient(135deg, var(--bleu-efrei) 0%, #002B4F 100%);
+}
+
+/* Cartes et conteneurs principaux gardent le blanc pour le contraste */
+.card,
+.teacher-card,
+.team-member,
+.dashboard-card,
+.creneau-card,
+.course-card,
+.matiere-card,
+.login-container,
+.register-container,
+.agenda-content {
+    background: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Section des filtres et statistiques gardent le bleu très clair existant */
+.filters-section,
+.stats-section,
+.partners-section,
+.matieres-populaires,
+.mes-reservations-dashboard {
+    background: var(--bleu-efrei-light);
+}
+
+/* Légère ombre portée sur le header pour le détacher du fond */
+header {
+    background: #FFFFFF;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+/* Footer garde son bleu foncé pour rester dans la charte */
+footer {
+    background: #0A2540;
+}
+.teacher-bio {
+    font-size: 0.85rem;
     color: var(--gris-texte);
-    margin-bottom: 3rem;
-    font-size: 1.1rem;
-}
-
-.matieres-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-bottom: 4rem;
-}
-
-.matiere-card {
-    background: var(--blanc);
-    border-radius: 1rem;
-    padding: 2rem;
-    text-align: center;
-    border: 1px solid var(--gris-bordure);
-    transition: all 0.3s ease;
-}
-
-.matiere-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--ombre-moyenne);
-    border-color: var(--bleu-accent);
-}
-
-.matiere-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.matiere-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
-    color: var(--bleu-efrei);
-}
-
-.matiere-description {
-    color: var(--gris-texte);
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
     line-height: 1.4;
+    margin: 0.75rem 0;
+    text-align: left;
 }
-
-.matiere-stats {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin: 1rem 0;
-    font-size: 0.85rem;
-}
-
-.matiere-stats .stat {
-    background: var(--bleu-efrei-light);
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    color: var(--bleu-efrei);
-}
-
-.btn-small {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
-}
-
-/* Matières populaires */
-.matieres-populaires {
-    background: var(--bleu-efrei-light);
-    border-radius: 1rem;
-    padding: 2rem;
-    margin-top: 2rem;
-}
-
-.matieres-populaires h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-}
-
-.popular-list {
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.popular-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.popular-name {
-    width: 120px;
-    font-weight: 500;
-}
-
-.popular-bar {
-    flex: 1;
-    height: 8px;
-    background: var(--gris-bordure);
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.popular-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--bleu-electrique), var(--violet));
-    border-radius: 4px;
-    transition: width 0.3s ease;
-}
-
-.popular-count {
-    width: 100px;
+.teacher-bio {
+    display: none;   /* masque la bio par défaut */
     font-size: 0.85rem;
     color: var(--gris-texte);
+    line-height: 1.4;
+    margin: 0.75rem 0;
+    text-align: left;
 }
 
-/* Mode nuit */
-.dark-mode .matiere-card {
-    background: var(--blanc);
+/* Lorsque la bio est affichée (classe .show) */
+.teacher-bio.show {
+    display: block;
+}
+.mes-reservations-dashboard h2 {
+    margin-bottom: 1rem;
+}
+.hero {
+    background: linear-gradient(135deg, rgba(65, 152, 223, 0.8), rgba(0, 43, 79, 0.9)), url('../images/hero/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 5rem 0;
+    border-bottom: none;
+}
+.map-container {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--ombre-legere);
+}
+/* Page Connexion / Inscription - version simple */
+.login-section,
+.register-section {
+    padding: 2rem 0;
 }
 
-.dark-mode .matiere-stats .stat {
-    background: #2D3A48;
-    color: var(--bleu-accent);
+.login-container,
+.register-container {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
-.dark-mode .matieres-populaires {
-    background: #0F172A;
-}
-
-.dark-mode .popular-bar {
-    background: #2D3A48;
+.login-container .container,
+.register-container .container {
+    padding: 0;
 }

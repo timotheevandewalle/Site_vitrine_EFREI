@@ -1,7 +1,7 @@
 <?php
 require_once 'includes/config.php';
 require_once 'includes/header.php';
-require_once 'data/teachers.php';
+require_once 'database/teachers.php';
 ?>
 
 <main>
@@ -41,7 +41,8 @@ require_once 'data/teachers.php';
                     <h3><?= $e['prenom'] ?> <?= $e['nom'] ?></h3>
                     <p class="teacher-specialite"><?= $e['specialite'] ?></p>
                     <p class="teacher-email"><?= $e['email'] ?></p>
-                    <a href="#" class="btn btn-small">Voir plus</a>
+                    <p class="teacher-bio"><?= htmlspecialchars($e['bio']) ?></p>
+                    <a href="#" class="btn btn-small voir-plus">Voir plus</a>
                 </div>
                 <?php endforeach; ?>
             </div>

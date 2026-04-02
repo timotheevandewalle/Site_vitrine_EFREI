@@ -1,7 +1,14 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 require_once 'includes/config.php';
 require_once 'includes/header.php';
-require_once 'data/courses.php'; // contient $formations
+require_once 'database/courses.php'; // contient $formations
+
+// Test de débogage
+echo '<!-- Fichier courses.php chargé : ' . (file_exists('database/courses.php') ? 'OUI' : 'NON') . ' -->';
+echo '<!-- $formations défini : ' . (isset($formations) ? 'OUI' : 'NON') . ' -->';
 ?>
 
 <main>
@@ -26,14 +33,16 @@ require_once 'data/courses.php'; // contient $formations
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($formations as $f): ?>
-                    <tr>
-                        <td><?= htmlspecialchars($f['titre']) ?></td>
-                        <td><?= $f['duree'] ?></td>
-                        <td><?= implode(', ', $f['specialites']) ?></td>
-                        <td><?= $f['niveau'] ?></td>
-                    </tr>
-                    <?php endforeach; ?>
+                    <?php if (isset($formations) && is_array($formations)): ?>
+                        <?php foreach ($formations as $f): ?>
+                            <tr>
+                                <td><?= htmlspecialchars($f['titre']) ?></td>
+                                <td><?= $f['duree'] ?></td>
+                                <td><?= implode(', ', $f['specialites']) ?></td>
+                                <td><?= $f['niveau'] ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </tbody>
             </table>
         </div>
@@ -56,16 +65,19 @@ require_once 'data/courses.php'; // contient $formations
     <!-- Liste détaillée des formations -->
     <section class="courses-list">
         <div class="container">
-            <?php foreach ($formations as $f): ?>
-            <div class="course-card" data-categories="<?= implode(' ', $f['categories']) ?>">
-                <h3><?= $f['titre'] ?></h3>
-                <p><strong>Durée :</strong> <?= $f['duree'] ?></p>
-                <p><strong>Niveau :</strong> <?= $f['niveau'] ?></p>
-                <p><strong>Spécialités :</strong> <?= implode(', ', $f['specialites']) ?></p>
-                <p><?= $f['description'] ?></p>
-                <a href="#" class="btn btn-secondary">Télécharger la brochure</a>
-            </div>
-            <?php endforeach; ?>
+            <?php if (isset($formations) && is_array($formations)): ?>
+                <?php foreach ($formations as $f): ?>
+                    <div class="course-card" data-categories="<?= implode(' ', $f['categories']) ?>">
+                        <h3><?= htmlspecialchars($f['titre']) ?></h3>
+                        <p><strong>Durée :</strong> <?= $f['duree'] ?></p>
+                        <p><strong>Niveau :</strong> <?= $f['niveau'] ?></p>
+                        <p><strong>Spécialités :</strong> <?= implode(', ', $f['specialites']) ?></p>
+                        <p><?= htmlspecialchars($f['description']) ?></p>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>Erreur : Aucune formation trouvée.</p>
+            <?php endif; ?>
         </div>
     </section>
 </main>

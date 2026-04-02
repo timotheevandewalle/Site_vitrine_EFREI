@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= SITE_NAME ?></title>
     <link rel="icon" href="assets/images/logo/favicon.ico">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=<?= time() ?>">
+    <link rel="stylesheet" href="assets/css/responsive.css?v=<?= time() ?>">
+    <link rel="stylesheet" href="assets/css/dark-mode.css?v=<?= time() ?>">
 </head>
 <body>
     <header>
@@ -20,6 +20,7 @@
             </div>
             <div class="site-title"><?= SITE_NAME ?></div>
             <button id="dark-mode-toggle" class="dark-mode-btn">🌙</button>
+            <?php require_once 'config.php'; ?>
             <?php require_once 'nav.php'; ?>
         </div>
     </header>

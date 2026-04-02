@@ -1,10 +1,11 @@
-    </main>
+</main>
     <footer>
         <div class="container footer-container">
             <div class="footer-nav">
                 <a href="index.php">Accueil</a>
                 <a href="formations.php">Formations</a>
                 <a href="equipe.php">Équipe</a>
+                <a href="permanences.php">Permanences</a>
                 <a href="contact.php">Contact</a>
                 <a href="contact.php#about">À propos</a>
             </div>
@@ -26,9 +27,10 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/carousel.js"></script>
     <script src="assets/js/dark-mode.js"></script>
-    <script src="assets/js/search-filter.js"></script>
+    <script src="assets/js/search-filter.js?v=<?= time() ?>"></script>
     <script src="assets/js/form-validation.js"></script>
     <script src="assets/js/agenda.js"></script>
     <script src="assets/js/counters.js"></script>
+    <script src="assets/js/formations-filter.js?v=<?= time() ?>"></script>
 </body>
 </html>

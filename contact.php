@@ -1,7 +1,7 @@
 <?php
 require_once 'includes/config.php';
 require_once 'includes/header.php';
-require_once 'data/team.php'; // équipe projet
+require_once 'database/team.php'; // équipe projet
 ?>
 
 <main>
@@ -67,7 +67,27 @@ require_once 'data/team.php'; // équipe projet
     <section class="info-pratique">
         <div class="container">
             <div class="info-grid">
-                <div class="map-placeholder">Carte</div>
+                <div class="<div class="info-grid">
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2628.642148035137!2d2.3611817413833207!3d48.788721705725465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e673e24e04a9c3%3A0xc55cb3e676f95321!2sEfrei!5e0!3m2!1sfr!2sfr!4v1774990457282!5m2!1sfr!2sfr" 
+            width="100%" 
+            height="250" 
+            style="border:0; border-radius: 1rem;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+    <div class="contact-details">
+        <h3>Adresse</h3>
+        <p>30-32 Avenue de la République, 94800 Villejuif</p>
+        <h3>Téléphone</h3>
+        <p>01 42 11 11 11</p>
+        <h3>Email</h3>
+        <p>info.informatique@efrei.fr</p>
+    </div>
+</div></div>
                 <div class="contact-details">
                     <h3>Adresse</h3>
                     <p>30-32 Avenue de la République, 94800 Villejuif</p>

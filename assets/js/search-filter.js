@@ -30,7 +30,21 @@ function filterTeachers() {
 if (searchInput) {
     searchInput.addEventListener('keyup', filterTeachers);
 }
-
+// Gestion du bouton "Voir plus" pour afficher/masquer la bio
+document.addEventListener('DOMContentLoaded', function() {
+    const voirPlusBtns = document.querySelectorAll('.voir-plus');
+    voirPlusBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();  // empêche le lien de naviguer
+            const card = this.closest('.teacher-card');
+            const bio = card.querySelector('.teacher-bio');
+            if (bio) {
+                bio.classList.toggle('show');
+                this.textContent = bio.classList.contains('show') ? 'Voir moins' : 'Voir plus';
+            }
+        });
+    });
+});
 filterTags.forEach(tag => {
     tag.addEventListener('click', () => {
         filterTags.forEach(t => t.classList.remove('active'));

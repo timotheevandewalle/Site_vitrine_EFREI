@@ -1,6 +1,7 @@
 <?php
 require_once 'includes/config.php';
 require_once 'includes/header.php';
+require_once 'database/schedule.php'; // contient $permanences
 ?>
 
 <main>
@@ -51,19 +52,18 @@ require_once 'includes/header.php';
             <h2>Nos formations</h2>
             <div class="cards-grid">
                 <div class="card">
-                    <div class="card-icon">🧠</div>
                     <h3>Intelligence Artificielle</h3>
                     <p>Spécialisez-vous en IA et machine learning</p>
                     <a href="formations.php#ia" class="card-link">En savoir plus →</a>
                 </div>
                 <div class="card">
-                    <div class="card-icon">🔒</div>
+                    
                     <h3>Cybersécurité</h3>
                     <p>Protégez les systèmes d'information</p>
                     <a href="formations.php#cyber" class="card-link">En savoir plus →</a>
                 </div>
                 <div class="card">
-                    <div class="card-icon">📊</div>
+                  
                     <h3>Data Science</h3>
                     <p>Analysez et valorisez les données</p>
                     <a href="formations.php#data" class="card-link">En savoir plus →</a>
@@ -93,54 +93,45 @@ require_once 'includes/header.php';
     </section>
 
     <!-- Section Partenaires -->
-<section class="partners-section">
-    <div class="container">
-        <h2>Nos partenaires</h2>
-        <p class="section-subtitle">Des entreprises et institutions qui nous accompagnent</p>
-        <div class="partners-grid">
-            <div class="partner-card">
-                <img src="assets/images/partners/airbus.png" alt="Airbus">
-            </div>
-            <div class="partner-card">
-                <img src="assets/images/partners/atos.png" alt="Atos">
-            </div>
-            <div class="partner-card">
-                <img src="assets/images/partners/axa.png" alt="AXA">
-            </div>
-            <div class="partner-card">
-                <img src="assets/images/partners/bnp-paribas.png" alt="BNP Paribas">
-            </div>
-            <div class="partner-card">
-                <img src="assets/images/partners/capgemini.png" alt="Capgemini">
-            </div>
-            <div class="partner-card">
-                <img src="assets/images/partners/edf.png" alt="EDF">
-            </div>
-            <div class="partner-card">
-                <img src="assets/images/partners/orange.png" alt="Orange">
-            </div>
-            <div class="partner-card">
-                <img src="assets/images/partners/sopra-steria.png" alt="Sopra Steria">
-            </div>
-        </div>
-    </div>
-</section>
-    <!-- Agenda des permanences avec onglets -->
-    <section class="agenda-section">
+    <section class="partners-section">
         <div class="container">
-            <h2>Permanences des enseignants</h2>
-            <div class="agenda-tabs">
-                <button class="tab-btn active" data-day="lundi">Lundi</button>
-                <button class="tab-btn" data-day="mardi">Mardi</button>
-                <button class="tab-btn" data-day="mercredi">Mercredi</button>
-                <button class="tab-btn" data-day="jeudi">Jeudi</button>
-                <button class="tab-btn" data-day="vendredi">Vendredi</button>
-            </div>
-            <div class="agenda-content" id="agenda-content">
-                <!-- Chargé via JS ou PHP -->
+            <h2>Nos partenaires</h2>
+            <p class="section-subtitle">Des entreprises et institutions qui nous accompagnent</p>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <img src="assets/images/partners/airbus.jpg" alt="Airbus">
+                </div>
+                <div class="partner-card">
+                    <img src="assets/images/partners/atos.png" alt="Atos">
+                </div>
+                <div class="partner-card">
+                    <img src="assets/images/partners/axa.png" alt="AXA">
+                </div>
+                <div class="partner-card">
+                    <img src="assets/images/partners/bnp-paribas.png" alt="BNP Paribas">
+                </div>
+                <div class="partner-card">
+                    <img src="assets/images/partners/capgemini.png" alt="Capgemini">
+                </div>
+                <div class="partner-card">
+                    <img src="assets/images/partners/edf.png" alt="EDF">
+                </div>
+                <div class="partner-card">
+                    <img src="assets/images/partners/orange.png" alt="Orange">
+                </div>
+                <div class="partner-card">
+                    <img src="assets/images/partners/sopra-steria.png" alt="Sopra Steria">
+                </div>
+                <div class="partner-card">
+                    <img src="assets/images/partners/thales.png" alt="Thales">
+                </div>
             </div>
         </div>
     </section>
 </main>
+
+<script>
+    window.agendaData = <?= json_encode($permanences, JSON_UNESCAPED_UNICODE) ?>;
+</script>
 
 <?php require_once 'includes/footer.php'; ?>
